@@ -16,7 +16,7 @@ stage('Geting Ready for Docker-Stage-Deployment') {
 
 
 
- 
+ }
  def project_path="petclinic"
  
  dir(project_path) {
