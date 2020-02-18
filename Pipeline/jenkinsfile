@@ -21,7 +21,7 @@ stage('Geting Ready for Docker-Stage-Deployment') {
  
  dir(project_path) {
   
- stage( 
+ 
    stage('Docker-Stage-Deployment') {
    sh label: '', script: 'docker-compose up -d --build'
   }
