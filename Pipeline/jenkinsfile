@@ -31,7 +31,7 @@ stage('Geting Ready for Docker-Stage-Deployment') {
   }
   stage('Downstream Build -- terraform')
   {
-	 build 'Infrastructure'
+	 build 'Petclinic_Infrastructure'
 	}
   }
 
