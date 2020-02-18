@@ -1,7 +1,7 @@
 node {
      
   stage('Git-Checkout') {
-   git 'https://github.com/Shyamjith06/TestServer.git'
+   git 'https://github.com/Shyamjith06/Petclinic_TestServer.git'
   }
    
 
