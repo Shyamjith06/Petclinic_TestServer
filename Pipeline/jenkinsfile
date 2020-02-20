@@ -5,7 +5,7 @@ node {
   }
    
 
-stage('Geting Ready for Docker-Stage-Deployment') {
+stage('Geting Ready for Test-Server-Deployment') {
     def server= Artifactory.server 'Artifactory'
         def downloadSpec = """{
             "files": [{
