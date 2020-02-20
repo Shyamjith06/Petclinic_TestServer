@@ -7,3 +7,4 @@ services:
     build: . 
     ports:
       - '30080:8080'
+
