@@ -1,5 +1,11 @@
 node {
      
+     environment {
+     	registry = "shyamjith06/petclinic"
+	registryCredentials = 'shyam-docker'
+	}
+     
+     
   stage('Git-Checkout') {
    git 'https://github.com/Shyamjith06/Petclinic_TestServer.git'
   }
@@ -24,6 +30,13 @@ stage('Geting Ready for Test-Server-Deployment') {
  
    stage('Docker-Stage-Deployment') {
    sh label: '', script: 'docker-compose up -d --build'
+  }
+  stage('Pushing DockerImage into DockerHub')
+  {
+  docker.withRegistry('','shyam-docker')
+  {
+  sh label: '',script: 'docker push shyamjith06/petclinic:$BUILD_NUMBER'
+  }
   }
   }
  stage('Production-Infrastructure - Provisioning Approval') {
