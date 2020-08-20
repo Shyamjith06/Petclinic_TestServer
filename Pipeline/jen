@@ -1,0 +1,27 @@
+node {
+ 
+  registry = "shyamjith06/petclinic"
+	registryCredentials = 'shyam-docker'
+	
+ 
+ stage('Git-Checkout') {
+   git 'https://github.com/Shyamjith06/Petclinic_CI.git'
+  }
+    
+ def project_path="petclinic"
+ 
+ dir(project_path) {
+    
+  stage('Maven-Clean') {
+   sh label: '', script: 'mvn clean'
+  }
+    
+ stage('Maven-Compile') {
+   sh label: '', script: 'mvn compile'
+  }
+  
+   stage('Maven-Package') {
+   sh label: '', script: 'mvn package'
+  }
+  }
+}
